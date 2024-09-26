@@ -1,0 +1,77 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1, "fields": {
+    "name": "dragon",
+    "description": "Fresh Item",
+    "price": "120.0",
+    "queue": 10,
+    "image": "products_images/dragonmdgalben.jpeg",
+    "category": 4
+  }
+  }
+,
+  {
+    "model": "products.product",
+    "pk": 2, "fields": {
+    "name": "mazali qulupnay",
+    "description": "Fresh Item",
+    "price": "8.0",
+    "queue": 9,
+    "image": "products_images/qulupnay_apa.webp",
+    "category": 4
+  }
+  }
+,
+  {
+  "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "mevalar toplamı",
+      "description": "Fresh Item",
+      "price": "9.0",
+      "queue": 21,
+      "image": "products_images/1000_F_222155134_LGqNTb2RmCtKP03aY3Hsq1eoq720XYgj.jpg",
+      "category": 4
+    }
+  }
+,
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "mevalar toplami",
+      "description": "Fresh Item",
+      "price": "23.0",
+      "queue": 43,
+      "image": "products_images/heart-shape-using-fruits-and-vegetables-on-white-background-photo.jpg",
+      "category": 4
+    }
+  }
+,
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "mango",
+      "description": "fresh item",
+      "price": "91.0",
+      "queue": 32,
+      "image": "products_images/mango_uka.webp",
+      "category": 4
+    }
+  }
+,
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "papayo",
+      "description": "mazali",
+      "price": "13.0",
+      "queue": 15,
+      "image": "products_images/collection-of-fruit-on-white-background-nicholas-eveleigh.jpg",
+      "category": 4
+    }
+  }
+]

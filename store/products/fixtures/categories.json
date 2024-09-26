@@ -1,0 +1,34 @@
+[
+  {
+    "model":
+  "products.productcategory",
+  "pk": 1,
+  "fields": {
+    "name": "kiyimlar",
+    "description": "kiyimlaÏr uchun tafsiont"
+  }
+}
+,
+{
+  "model": "products.productcategory",
+  "pk": 2, "fields": {
+  "name": "oyoq kiyim",
+    "description": null
+}
+}
+,
+{
+    "model": "products.productcategory",
+    "pk": 3, "fields": {
+    "name": "WoodleWorld",
+    "description": null
+  }
+  },
+
+  {"model": "products.productcategory",
+    "pk": 4, "fields": {
+    "name": "oziq ovqat",
+    "description": null
+  }
+  }
+]

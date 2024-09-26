@@ -1,0 +1,205 @@
+{%extends 'products/base.html' %}
+{% load static cache humanize %}
+
+{% block css %}
+	    <link rel="stylesheet" href=" {% static 'vendor/css/style.css'%} ">
+{% endblock %}
+
+{% block content %}
+    <div class="change"> 
+     <ul id="world">
+     {% for category in categories %}
+            <li><a href="{% url 'products:category' category.id %}" class="home-active" style="color: azure">
+                {{ category.name }}
+            </a></li>
+
+    {% endfor %}
+    </ul>
+    </div>
+                     
+
+    
+        <!-- product -->
+       <section class="product" id="product">
+         <div class="heading">
+            <h1>Our Popular<br> <span>Product</h1>
+            <a href="#" class="btn">Shop Now <i class="fa-solid fa-right-long"></i></a>
+        </div>
+        <! -- Product Content -->
+       
+        <div class="product-container">
+        
+
+          {% for product in object_list %} 
+              <div class="box">
+                <img src="{{ product.image.url }}">
+                <span>{{ product.description }}</span>
+                <h2>{{ product.name }}</h2>
+                <h3 class="price">{{ product.price | intcomma }}$ <span></span></h3>
+                        <div class="card-footer text-center">
+                                <a class=" btn-outline-success"
+                                   href="{% url 'products:basket_add' product.id %}"><i class="fa-solid fa-cart-shopping"></i></a>
+                        </div>
+                <i class="fa-regular fa-heart"></i>
+            </div>
+          {% endfor %}
+
+
+        </div>
+       
+       
+    </section>
+    
+    <!-- Page -->
+
+    {% if is_paginated %}
+    <nav aria-label="Page navigation example">
+        <ul class="pagination " style="text-align: center">
+            <li class="page-item {% if not page_obj.has_previous %} disabled {% endif %} ">
+                <a class="page"
+                   href="{% if page_obj.has_previous %} 
+{% url 'products:paginator' page_obj.previous_page_number %} 
+{% else %} # {% endif %}" 
+                   tabindex="-1" aria-disabled="true">Предыдущая
+                </a>
+            </li>
+            {% for page in paginator.page_range %}
+                <li class="page-item">
+                    <a class="page-link" href="{% url 'products:paginator' page %}">
+                        <button> {{ page }} </button>
+                    </a>
+                </li>
+            {% endfor %}
+
+            <li class="page-item" {% if not page_obj.has_next %} disabled {% endif %}>
+                <a class="page"
+                   href="{% if page_obj.has_next %} 
+{% url 'products:paginator' page_obj.next_page_number %} 
+{% else %} # {% endif %}">
+                    Следующая
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+
+
+    <!-- customer -->
+
+
+         <!-- About -->
+        <section class="about" id="about">
+        <img src="{% static 'vendor/img/world2.jpg'%}">
+        <div class="about-text">
+        <span> About Us</span>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel urna maximus erat tristique luctus. Maecenas cursus vehicula aliquet. Praesent augue risus, pharetra eget sapien eget, condimentum
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel urna
+            </p>
+            <a href="#" class="btn">Learn More <i class="fa-solid fa-right-long"></i></a>
+        </div>
+
+    </section>
+
+    <section class="customer" id="customer">
+        <h2> why Customer's Love Us ? </h2>
+            <!-- customer content -->
+        <div class="customer-container">
+
+             <!-- Review 1 -->
+            <div class="box">
+                 <i class="fa-solid fa-quote-left"></i>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel urna</p>
+                <div class="review-profile">
+                    <img src="{% static 'vendor/img/spedermon.jpeg'%}" alt="">
+                    <h3>spedermen</h3>
+                </div>
+            </div>
+          <!-- Review 2 -->
+            <div class="box">
+                 <i class="fa-solid fa-quote-left"></i>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel urna</p>
+                <div class="review-profile">
+                    <img src="{% static 'vendor/img/satoru-gojo-reference-fanart-v0-e3zaq33rfn791.webp'%}" alt="">
+                    <h3>Soturu Gojo</h3>
+                </div>
+            </div>
+             <!-- Review 3 -->
+            <div class="box">
+                 <i class="fa-solid fa-quote-left"></i>
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vel urna</p>
+                <div class="review-profile">
+                    <img src="{% static 'vendor/img/ilon%20mask.jpeg'%}" alt="">
+                    <h3>ilon brat</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+
+    <div class="copyright">
+        <p> CarpoolVenom All Right Reserved. </p>
+    </div>
+{% endblock %}
+
+{% block footer %}
+	    <section class="footer" id="footer">
+        <div class="footer-box">
+             <a href="#" class="logo"><i class="fa-solid fa-basket-shopping"></i>WoodlyWorld</a>
+            <p>GymVast 50th, street,4th <br> Footer, NYC 10022</p>
+            <div class="social">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-apple"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h2>Categories</h2>
+            <a href="#">fruits & vegetabels</a>
+            <a href="#"> Dairy Products</a>
+            <a href="#"> Package Food</a>
+            <a href="#"> Bevarage</a>
+        </div>
+        <div class="footer-box">
+            <h2>Useful Links</h2>
+            <a href="#">payment & Tax</a>
+            <a href="#">Terms Of Use</a>
+            <a href="#">My Blog</a>
+            <a href="#">Return Policy</a>
+        </div>
+        <div class="footer-box">
+            <h2>Newsletter</h2>
+            <p>Get 10% Discount with <br>Email Newsletter </p>
+            <form action="">
+                <i class="fa-solid fa-envelope fa-shake"></i>
+                <input type="name" name="" id="" placeholder="Enter Your Email">
+                <i class="fa-solid fa-arrow-right fa-beat-fade fa-lg" style="color: #f75f1d;"></i>
+            </form>
+        </div>
+    </section>
+{% endblock %}

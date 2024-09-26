@@ -1,0 +1,48 @@
+{% extends 'users/base.html' %}
+
+{% block content %}
+	    <div class="container">
+        <h1>Sing Up</h1>
+            {% if form.errors %}
+            	  <div class="error" role="alert">
+    {{ form.errors }}
+<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">x</span>
+</button>
+    </div>
+            {% endif %} 
+          
+             <form action="{% url 'users:registration' %}" method="post" style="margin-top: -200px">
+                 {% csrf_token  %}
+            <div class="form-control">
+            {{ form.first_name }}
+                </div>
+                 
+            <div class="form-control">
+                {{ form.username }}
+
+            </div>
+
+            <div class="form-control">
+                {{ form.password1 }}
+            </div>
+                 
+                  <div class="form-center">
+                {{ form.last_name }}
+            </div>
+                 
+                 <div class="form-center">
+                {{ form.email }}
+            </div>
+                 
+                  <div class="form-center">
+                {{ form.password2 }}
+            </div>
+                 
+
+
+                  <input class="btn btn-primary" type="submit" value="Авторизоваться">
+            <div class="small"><a href="{% url 'users:login' %}">Уже есть аккаунт</a></div>
+        </form>
+    </div>
+{% endblock %}

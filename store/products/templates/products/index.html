@@ -1,0 +1,65 @@
+{% extends 'products/base.html' %}
+{% load static %}
+
+{% block css %}
+	    <link rel="stylesheet" href=" {% static 'vendor/css/style.css' %}  ">
+{% endblock %}
+{% block content %}
+	<section class="index" id="index">
+    <div class="swiper-wrapper">
+			<div class="swiper-wrapper">
+                <div class="swiper-slide container">
+                    <!-- silde1 -->
+                    <div class="home-text">
+                        <span>We are delicacy</span>
+                        <h1>Choose delicacy <br> the best healthy <br> chicken salad</h1>
+                        <a href="{% url 'products:index' %}" class="btn">Shop Now <i class="fa-solid fa-right-long"></i></a>
+                    </div>
+                    <img src=" {% static 'vendor/img/1000_F_177528939_vI4l5rOnLg8FnwXRvpVT06pjissH4Z7q.jpg' %} " alt="">
+            </div>
+{#                <!--  box2  -->#}
+{##}
+{#                      <div class="swiper-slide container">#}
+{#                    <div class="home-text">#}
+{#                        <span>We are delicacy</span>#}
+{#                        <h1>Choose delicacy <br> the best healthy <br> chicken salad</h1>#}
+{#                        <a href="#" class="btn">Shop Now <i class="fa-solid fa-right-long"></i></a>#}
+{#                    </div>#}
+{#                    <img src=" {% static 'vendor/img/1000_F_213720887_4vfmTLaUBEQQIRzonOeDXYmot249VmNP.jpg' %} " alt="">#}
+{#            </div>#}
+{#                <!-- box3 -->#}
+{#                      <div class="swiper-slide container">#}
+{#                    <div class="home-text">#}
+{#                        <span>We are delicacy</span>#}
+{#                        <h1>Choose delicacy <br> #}
+{#                            the best healthy <br>#}
+{#                            chicken salad</h1>#}
+{#                        <a href="#" class="btn">Shop Now <i class="fa-solid fa-right-long"></i></a>#}
+{#                    </div>#}
+{#                    <img src=" {% static 'vendor/img/1000_F_222155134_LGqNTb2RmCtKP03aY3Hsq1eoq720XYgj.jpg' %} " alt="">#}
+{#            </div>#}
+{##}
+{#         </div>#}
+{##}
+{##}
+{#        <div class="swiper-button-next">#}
+{#            <i class="fa-solid fa-arrow-left fa-bounce"></i>#}
+{#        </div>#}
+{#		<div class="swiper-button-prev">#}
+{#            <i class="fa-solid fa-arrow-right fa-bounce"></i>#}
+{#        </div>#}
+    </section>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
